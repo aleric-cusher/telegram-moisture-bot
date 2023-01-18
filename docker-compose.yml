@@ -1,0 +1,11 @@
+services:
+  tg_bot:
+    build: .
+    container_name: tg_bot
+    command: python -u telegram_bot.py
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - .:/code
+      - path_to_db/moisture_data.db:/code/moisture_data.db
